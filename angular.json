@@ -3,11 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "myStore2": {
+    "signalStore": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "inlineTemplate": true,
+          "inlineTemplate": false,
           "inlineStyle": true,
           "style": "scss",
           "skipTests": true
@@ -84,10 +84,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "myStore2:build:production"
+              "buildTarget": "signalStore:build:production"
             },
             "development": {
-              "buildTarget": "myStore2:build:development"
+              "buildTarget": "signalStore:build:development"
             }
           },
           "defaultConfiguration": "development"
