@@ -15,13 +15,13 @@ export const initialIsLoadingState: IsLoadingState = {
   isLoading: false,
 };
 
-export function withIsLoadingFeature() {
+export function withIsLoadingFeature<_>() {
   return signalStoreFeature(
     // Declare properties, methods, and computed signals the parent store MUST have
     {
       state: type<{ timesInSecond: number }>(),
-      // computed: type<{ computedTimesInSecond: Signal<number> }>(),
-      // methods: type<{ incrementTime(): void }>(),
+      computed: type<{ computedTimesInSecond: Signal<number> }>(),
+      methods: type<{ incrementTime(): void }>(),
     },
 
     withState<IsLoadingState>(initialIsLoadingState),
@@ -29,16 +29,16 @@ export function withIsLoadingFeature() {
     withComputed((store) => {
       // Place Injections Here
       return {
-        // isLoading: computed<boolean>(
-        //   // () => store.computedTimesInSecond() % 2 === 0,
-        // ),
+        isLoading: computed<boolean>(
+          () => store.computedTimesInSecond() % 2 === 0,
+        ),
       };
     }),
 
     withMethods((store) => {
       // Place Injections Here
       return {
-        // helloWorld: (): void => store.incrementTime(),
+        helloWorld: (): void => store.incrementTime(),
       };
     }),
   );
