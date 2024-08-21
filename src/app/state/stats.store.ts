@@ -33,14 +33,14 @@ export const AppStore = signalStore(
   })),
 
   withMethods((store) => ({
-    incrementTime: () => console.log("incrementTime"),
+    incrementTime: (): void => console.log("incrementTime"),
   })),
 
   // You need to add the feature after all the requirements are met
   withIsLoadingFeature(),
 
   withMethods((store) => ({
-    setIsLoading: () => patchState(store, setLoadingToTrue()),
-    setLoadingComplete: () => patchState(store, setLoadingToFalse()),
+    setIsLoading: (): void => patchState(store, setLoadingToTrue()),
+    setLoadingComplete: (): void => patchState(store, setLoadingToFalse()),
   })),
 );

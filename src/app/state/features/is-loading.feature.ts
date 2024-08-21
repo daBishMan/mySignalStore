@@ -39,6 +39,7 @@ export function withIsLoadingFeature<_>() {
       // Place Injections Here
       return {
         helloWorld: (): void => store.incrementTime(),
+        anotherMethod: (): void => console.log("anotherMethod"),
       };
     }),
   );
