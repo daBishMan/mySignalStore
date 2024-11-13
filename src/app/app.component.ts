@@ -8,7 +8,7 @@ import { AppStore, AppStoreType } from "./state/stats.store";
   imports: [RouterOutlet],
   templateUrl: "./app.component.html",
 })
-export class AppComponent {
+ export class AppComponent {
   title = "My Signal Store";
 
   protected readonly appStore: AppStoreType = inject(AppStore);
