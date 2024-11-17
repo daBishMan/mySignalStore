@@ -11,5 +11,7 @@ import { AppStore, AppStoreType } from "./state/stats.store";
  export class AppComponent {
   title = "My Signal Store";
 
-  protected readonly appStore: AppStoreType = inject(AppStore);
+  protected readonly appStore: AppStoreType = inject( AppStore );
+
+
 }
